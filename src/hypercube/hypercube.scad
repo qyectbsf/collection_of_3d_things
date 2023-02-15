@@ -16,21 +16,21 @@ module support()
   for (i = [0:3])
   {
     // create basic tree style support
-    translate([0,0,-outer_cube_length / 2.0]) hull()
+    translate([0.0, 0.0, -outer_cube_length / 2.0]) hull()
     {
       // lower part
-      rotate([0,0,i * 90])
-        translate([26, 0, 3 + space_between_support_and_part])
-        cube([3,30,6], center = true);
+      rotate([0.0, 0.0, i * 90.0])
+        translate([26.0, 0.0, 3.0 + space_between_support_and_part])
+        cube([3.0, 30.0, 6.0], center = true);
 
       // upper part
-      rotate([0,0,i * 90])
-        translate([18,0,34.5])
-        cube([6,23,3], center = true);
+      rotate([0.0, 0.0, i * 90.0])
+        translate([18.0, 0.0, 34.5])
+        cube([6.0, 23.0, 3.0], center = true);
     }
   }
 
-  translate([0,0, -outer_cube_length / 2.0 + (outer_cube_length - inner_cube_length) / 4.0 + space_between_support_and_part])
+  translate([0.0, 0.0, -outer_cube_length / 2.0 + (outer_cube_length - inner_cube_length) / 4.0 + space_between_support_and_part])
     cube([inner_cube_length, inner_cube_length, (outer_cube_length - inner_cube_length) / 2.0], center = true);
 }
 
@@ -68,8 +68,8 @@ module main()
     {
       for (i = [0:3])
       {
-        rotate([55,0,45 + i * 90])
-          cylinder(h = 72, d = edge_width, center = true, $fn = resolution);
+        rotate([55.0, 0.0, 45.0 + i * 90.0])
+          cylinder(h = edge_length, d = edge_width, center = true, $fn = resolution);
       }
     }
   }
