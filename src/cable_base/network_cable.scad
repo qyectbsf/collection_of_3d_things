@@ -1,7 +1,6 @@
 oversize = 0.1;
 resolution = 200.0;
 
-
 module cat_cable(width, length, cable_width)
 {
   difference()
